@@ -15,11 +15,11 @@ html, body {
 
 :root {
     --bg-color: #f9f9f9;
-    --text-color: #333;
-    --link-color: #007acc;
-    --bg-color-dark: #333;
+    --text-color: #333333;
+    --link-color: #003366; /* Darkened link color for better contrast */
+    --bg-color-dark: #333333;
     --text-color-dark: #f9f9f9;
-    --link-color-dark: #66b2ff;
+    --link-color-dark: #99ccff; /* Lightened link color for dark mode */
     --font-size-base: 16px;
 }
 
@@ -69,11 +69,14 @@ body.dark-mode a {
 table {
     width: 100%;
     border-collapse: collapse;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 thead {
-    background-color: #007acc;
-    color: #fff;
+    background-color: #005ea2;
+    color: #ffffff;
 }
 
 thead th {
@@ -83,52 +86,42 @@ thead th {
 }
 
 tbody tr:nth-child(even) {
-    background-color: #cce4ff; /* Slightly darker blue for even rows */
+    background-color: #cce4ff;
 }
 
 td, th {
     padding: 0.5rem;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #dddddd;
     font-size: 0.9rem;
     min-width: 100px;
 }
 
-/* Make table data cells have a blue background */
 td {
-    background-color: #e6f0ff; /* Light blue background for better visibility */
-    color: #000; /* Black text color for readability */
+    background-color: #e6f0ff;
+    color: #000000;
 }
 
+/* Adjusted link color in table cells for sufficient contrast */
 td a {
-    color: #005ea2; /* Darker blue for links */
+    color: #000000; /* Black link color in table cells */
+    text-decoration: underline; /* Underline to distinguish links */
+}
+
+td a:hover,
+td a:focus {
+    color: #333333; /* Slightly lighter black for hover, still accessible */
 }
 
 tbody tr:nth-child(even) td {
-    background-color: #cce4ff; /* Slightly darker blue for even rows */
+    background-color: #cce4ff;
 }
 
-/* Allow table to scroll horizontally on small screens */
-table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-}
-
-table tr {
-    display: table-row;
-}
-
-table td, table th {
-    display: table-cell;
-}
-
-/* Other Styles */
 /* Collapsible Sections */
 .collapsible {
     cursor: pointer;
-    background-color: #007acc;
-    color: white;
+    background-color: #005ea2;
+    color: #ffffff;
     padding: 10px;
     text-align: left;
     border: none;
@@ -155,9 +148,9 @@ table td, table th {
 }
 
 .progress-bar-fill {
-    width: 75%; /* Example percentage */
+    width: 75%;
     height: 100%;
-    background-color: #007acc;
+    background-color: #005ea2;
     transition: width 0.3s ease;
     animation: fillProgressBar 2s ease-in-out;
 }
@@ -171,8 +164,8 @@ table td, table th {
 .sticky-header {
     position: sticky;
     top: 0;
-    background-color: #333;
-    color: white;
+    background-color: #333333;
+    color: #ffffff;
     padding: 10px;
     text-align: center;
     z-index: 10;
@@ -182,8 +175,8 @@ table td, table th {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #007acc;
-    color: white;
+    background-color: #005ea2;
+    color: #ffffff;
     border-radius: 50%;
     padding: 15px;
     text-align: center;
@@ -198,7 +191,7 @@ table td, table th {
 }
 
 .touch-hover:active {
-    background-color: #ccc;
+    background-color: #cccccc;
 }
 
 .section-transition {
@@ -245,11 +238,14 @@ h2 {
         color: var(--link-color-dark);
     }
     td {
-        background-color: #2b2b2b; /* Darker background for dark mode */
-        color: #f9f9f9; /* Light text color */
+        background-color: #2b2b2b;
+        color: #f9f9f9;
+    }
+    td a {
+        color: #f9f9f9; /* Ensure link contrast in dark mode */
     }
     tbody tr:nth-child(even) td {
-        background-color: #b0adad; /* Slightly lighter for even rows */
+        background-color: #4d4d4d;
     }
 }
 
@@ -259,7 +255,7 @@ h2 {
     top: 20px;
     right: 20px;
     background-color: var(--link-color);
-    color: white;
+    color: #ffffff;
     border: none;
     padding: 10px;
     cursor: pointer;
@@ -286,8 +282,8 @@ img {
 footer {
     text-align: center;
     padding: 16px;
-    background-color: #333;
-    color: white;
+    background-color: #333333;
+    color: #ffffff;
 }
 
 footer a {
@@ -307,81 +303,53 @@ footer a:hover {
     }
 }
 
+/* Sticky Header for H1 */
 header h1 {
     position: sticky;
     top: 0;
     background-color: #201515;
+    color: #ffffff;
     padding: 10px;
     margin: 0;
     z-index: 1000;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #cccccc;
 }
+
+/* Touch-Friendly Hover Effects */
 
 /* Hide team-info divs by default */
 .team-info {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
+    background-color: #353563;
+    color: #ffffff;
     transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
 }
 
 /* Show team-info on hover or focus */
 .team-item:hover .team-info,
 .team-item:focus-within .team-info {
-    max-height: 200px; /* Adjust as needed */
+    max-height: 200px;
     opacity: 1;
     transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
 }
 
+/* Style for team-link */
 .team-link {
     display: inline-block;
     position: relative;
     z-index: 1;
-}
-
-/* Style for team-item */
-.team-item {
-    position: relative;
-    margin-bottom: 20px;
-}
-
-/* Style for team-info */
-.team-info {
-    background-color: #353563;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-top: none;
-    position: relative;
-    top: -1px;
-    z-index: 0;
-}
-
-.team-link {
     font-size: 1.2rem;
-    color: #007acc;
+    color: var(--link-color);
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .team-link:hover,
 .team-link:focus {
+    color: #002244;
     text-decoration: underline;
-}
-
-/* Support for touch devices */
-@media (hover: none) {
-    .team-link:active + .team-info {
-        max-height: 200px;
-        opacity: 1;
-        transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
-    }
-}
-
-/* Team Link Hover and Focus Animation */
-.team-link {
-    position: relative;
-    color: #007acc;
-    text-decoration: none;
-    transition: color 0.3s ease;
 }
 
 .team-link::after {
@@ -391,18 +359,28 @@ header h1 {
     bottom: -2px;
     width: 0;
     height: 2px;
-    background-color: #007acc;
+    background-color: var(--link-color);
     transition: width 0.3s ease;
-}
-
-.team-link:hover,
-.team-link:focus {
-    color: #005fa3;
 }
 
 .team-link:hover::after,
 .team-link:focus::after {
     width: 100%;
+}
+
+/* Style for team-item */
+.team-item {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Support for touch devices */
+@media (hover: none) {
+    .team-link:active + .team-info {
+        max-height: 200px;
+        opacity: 1;
+        transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
+    }
 }
 
 /* Header Fade-in Animation */
