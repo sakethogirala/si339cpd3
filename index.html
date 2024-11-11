@@ -4,20 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Athlete Stats Homepage</title>
+    <!-- FontAwesome CDN for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- CSS Links -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header id="home-header">
-        <h1>Welcome to Athlete Stats</h1>
-        <p>Select a team to view athlete details and performance stats.</p>
+    <!-- Dark Mode Toggle Button -->
+    <button class="dark-mode-toggle" aria-label="Toggle Dark Mode">🌙</button>
+
+
+    <!-- Lightbox Images -->
+    <main id="home-main">
+        <section id="teams-section" class="teams">
+            <h2>Teams</h2>
+            <ul class="teams-list">
+                <li class="team-item">
+                    <img src="images/default_image.jpg" alt="Men's Team" class="lightbox-img">
+                </li>
+                <li class="team-item">
+                    <img src="images/default_image.jpg" alt="Women's Team" class="lightbox-img">
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Lightbox Container -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-image">
+        <div id="caption"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <div class="logo">
+            <a href="index.html">Athlete Stats</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="mens_team/index.html">Men's Team</a></li>
+            <li><a href="womens_team/index.html">Women's Team</a></li>
+        </ul>
+        <!-- Hamburger Menu for Mobile -->
+        <button class="hamburger" aria-label="Toggle Navigation Menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home-header" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Athlete Stats</h1>
+            <p>Explore detailed performance statistics and profiles of our dedicated athletes.</p>
+            <a href="#teams-section" class="btn">View Teams</a>
+        </div>
     </header>
 
+    <!-- Main Content -->
     <main id="home-main">
-        <section id="teams-section">
+        <!-- Teams Section -->
+        <section id="teams-section" class="teams">
             <h2>Teams</h2>
-            <ul id="teams-list">
+            <ul id="teams-list" class="teams-list">
                 <li class="team-item" id="mens-team">
                     <a href="mens_team/index.html" class="team-link" aria-describedby="mens-team-info">Men's Team</a>
                     <div class="team-info" id="mens-team-info" role="region" aria-label="Men's Team Information">
@@ -32,10 +83,25 @@
                 </li>
             </ul>
         </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <p>For more information, please reach out to us at <a href="mailto:info@athletestats.com">info@athletestats.com</a>.</p>
+        </section>
     </main>
 
+    <!-- Footer -->
     <footer id="home-footer">
         <p>&copy; 2024 Skyline High School</p>
+        <ul class="socials">
+            <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        </ul>
     </footer>
+
+    <!-- JavaScript for Enhanced Functionality -->
+    <script src="js/script.js"></script>
 </body>
 </html>

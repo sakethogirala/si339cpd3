@@ -4,12 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Women's Team - Athlete Stats</title>
+    <!-- FontAwesome CDN for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Links -->
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+    <!-- Dark Mode Toggle Button -->
+    <button class="dark-mode-toggle" aria-label="Toggle Dark Mode">🌙</button>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <div class="logo">
+            <a href="../index.html">Athlete Stats</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../mens_team/index.html">Men's Team</a></li>
+            <li><a href="../womens_team/index.html">Women's Team</a></li>
+        </ul>
+        <!-- Hamburger Menu for Mobile -->
+        <button class="hamburger" aria-label="Toggle Navigation Menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </nav>
+
     <header>
-        <a href = "../index.html"><h1>Women's Team</h1></a>
+        <a href="../index.html"><h1>Women's Team</h1></a>
     </header>
 
     <main>
@@ -50,9 +73,18 @@
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Skyline High School</p>
-        <a href="../index.html">Back to Home</a>
+        <ul class="socials">
+            <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+        <a href="../index.html" class="back-home">Back to Home</a>
     </footer>
+
+    <!-- JavaScript for Enhanced Functionality -->
+    <script src="../js/script.js"></script>
 </body>
 </html>
